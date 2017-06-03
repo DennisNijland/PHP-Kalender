@@ -26,17 +26,17 @@ function createSave()
 function edit()
 {
 	render("Birthday/edit", array(
-		'birthdays' => getAllBirthdays()
+		'birthdays' => editBirthday()
 	));
 }
 
 function editSave()
 {
 	if (!editBirthday()) {
-		header("Location:" . URL . "error/berror");
+		//header("Location:" . URL . "error/berror");
 		exit();
 	}
 
-	header("Location:" . URL . "birthday/index");
+	//header("Location:" . URL . "birthday/index");
 }
 ?>

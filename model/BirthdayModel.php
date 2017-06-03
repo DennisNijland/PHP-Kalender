@@ -41,7 +41,7 @@ function editBirthday()
 	
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE students SET person = :person, day = :day, month = :month WHERE id = :id";
+	$sql = "UPDATE birthdays SET person = :person, day = :day, month = :month year = :year WHERE id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':person' => $person,
@@ -59,7 +59,7 @@ function getAllBirthdays()
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM birthdays";
+	$sql = "SELECT * FROM birthdays ORDER BY month";
 	$query = $db->prepare($sql);
 	$query->execute();
 

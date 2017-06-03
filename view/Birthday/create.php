@@ -13,5 +13,6 @@
 		<input type="submit" value="Verzenden">
 	
 	</form>
+	<a href="<?= URL ?>Birthday/index">Terug naar de kalender</a>
 
 </div>

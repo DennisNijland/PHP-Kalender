@@ -1,1 +1,10 @@
-  <h1>Dit is student/delete</h1>
+<html>
+<body>
+	<h1>Dit is Birthday/delete</h1>
+</body>
+</html>\
+
+<?php
+
+echo "Hallo";
+?>
