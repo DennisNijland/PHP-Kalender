@@ -1,7 +1,7 @@
 <h1>Edit</h1>
 	
 
-	<form action="<?= URL ?>Birthday/editSave" method="post">
+	<form action="<?= URL ?>Birthday/editSave" method="POST">
 		
 
 		<input type="hidden" name="id" value="<?= $birthdays['id'] ?>">
@@ -11,6 +11,6 @@
 		Month: <input type="text" name="month" value="<?= $birthdays['month'] ?>">
 		Year: <input type="text" name="year" value="<?= $birthdays['year'] ?>">
 
-		<button type="submit">Opslaan</button>
+		<input type="submit">
 	</form>
 <a href="<?= URL ?>Birthday/index">Terug naar de kalender</a>

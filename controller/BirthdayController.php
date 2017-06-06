@@ -47,5 +47,5 @@ function delete($id)
 		exit();
 	}
 
-	header("Location:" . URL . "Birthday/index");
+	header("Location:" . URL . "birthday/index");
 }
