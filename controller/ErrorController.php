@@ -7,5 +7,5 @@ function error()
 
 function berror()
 {
-	echo "Het toevoegen is niet gelukt.";
+	echo "Er is iets fout gegaan.";
 }
