@@ -26,6 +26,20 @@ function createBirthday(){
 	return true;
 }
 
+
+function getAllBirthdays() 
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM birthdays ORDER BY month";
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
 function editBirthday() 
 {
 	$person = isset($_POST['person']) ? $_POST['person'] : null;
@@ -35,13 +49,13 @@ function editBirthday()
 	$id = isset($_POST['id']) ? $_POST['id'] : null;
 	
 	if (strlen($person) == 0 || strlen($day) == 0 || strlen($month) == 0 || strlen($year) == 0) {
-		echo "Niet ingevuld";
+		//echo "Niet ingevuld";
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE birthdays SET person = :person, day = :day, month = :month year = :year WHERE id = :id";
+	$sql = "UPDATE birthdays SET person = :person, day = :day, month = :month, year = :year WHERE id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':person' => $person,
@@ -55,15 +69,31 @@ function editBirthday()
 	return true;
 }
 
-function getAllBirthdays() 
+
+function getBirthday($id) 
 {
 	$db = openDatabaseConnection();
-
-	$sql = "SELECT * FROM birthdays ORDER BY month";
+	$sql = "SELECT * FROM birthdays WHERE id = :id ";
 	$query = $db->prepare($sql);
-	$query->execute();
-
+	$query->execute(array(
+		":id" => $id));
 	$db = null;
+	return $query->fetch();
+}
 
-	return $query->fetchAll();
+
+function deleteBirthday($id = null) 
+{
+	if (!$id) {
+		return false;
+	}
+	
+	$db = openDatabaseConnection();
+	$sql = "DELETE FROM birthdays WHERE id=:id ";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':id' => $id));
+	$db = null;
+	
+	return true;
 }

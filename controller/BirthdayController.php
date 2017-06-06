@@ -13,8 +13,7 @@ function create(){
 	render("Birthday/create");
 }
 
-function createSave()
-{
+function createSave(){
 	if (!createBirthday()) {
 		header("Location:" . URL . "error/berror");
 		exit();
@@ -23,8 +22,9 @@ function createSave()
 	header("Location:" . URL . "birthday/index");
 }
 
-function edit()
-{
+function edit($id = ''){
+	$birthdays = getBirthday($id);
+
 	render("Birthday/edit", array(
 		'birthdays' => editBirthday()
 	));
@@ -33,10 +33,19 @@ function edit()
 function editSave()
 {
 	if (!editBirthday()) {
-		//header("Location:" . URL . "error/berror");
+		header("Location:" . URL . "error/berror");
 		exit();
 	}
 
-	//header("Location:" . URL . "birthday/index");
+	header("Location:" . URL . "birthday/index");
 }
-?>
+
+function delete($id)
+{
+	if (!deleteBirthday($id)) {
+		header("Location:" . URL . "error/berror");
+		exit();
+	}
+
+	header("Location:" . URL . "Birthday/index");
+}

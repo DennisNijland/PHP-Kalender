@@ -1,10 +1,7 @@
-<html>
-<body>
-	<h1>Dit is Birthday/delete</h1>
-</body>
-</html>\
+<h1>Dit is Birthday/delete</h1>
 
-<?php
+<form action="<?= URL ?>Birthday/deleteSave" method="post">
 
-echo "Hallo";
-?>
+
+<button action="<?= URL ?>Birthday/deleteSave" method="post">Verwijderen</button>
+<a href="<?= URL ?>Birthday/index">Terug naar de kalender</a>

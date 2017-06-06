@@ -4,14 +4,13 @@
 	<form action="<?= URL ?>Birthday/editSave" method="post">
 		
 
+		<input type="hidden" name="id" value="<?= $birthdays['id'] ?>">
+
 		Person: <input type="text" name="person" value="<?= $birthdays['person'] ?>">
 		Day: <input type="text" name="day" value="<?= $birthdays['day'] ?>">
 		Month: <input type="text" name="month" value="<?= $birthdays['month'] ?>">
 		Year: <input type="text" name="year" value="<?= $birthdays['year'] ?>">
-		
 
-		<input type="hidden" name="id" value="<?= $birthdays['id'] ?>">
-		<button type="submit">Verzenden</button>
-	
+		<button type="submit">Opslaan</button>
 	</form>
 <a href="<?= URL ?>Birthday/index">Terug naar de kalender</a>

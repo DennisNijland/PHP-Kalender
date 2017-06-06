@@ -7,11 +7,10 @@ $month = array("januari","februari","maart","april","mei","juni","juli","augustu
 foreach($birthdays as $birthday) {?>
 
 
-	<h1><ul><?=$birthday['person'];?></ul></h1>
+	<h1><ul><?=$month[$birthday['month'] -1]; ?></ul></h1>
 	<h2><ul><?=$birthday['day'];?></ul></h2>
-	<ul><?=$month[$birthday['month'] -1]; ?></ul>
-	<a href="<?= URL ?>Birthday/edit">Edit</a>
-	<a href="<?= URL ?>Birthday/delete">Delete</a>
+	<a href="<?= URL ?>Birthday/edit/<?= $birthday['id'];?>"><h4><ul><?=$birthday['person'];?></ul></h4></a>
+	<a href="<?= URL ?>Birthday/delete/<?= $birthday['id'];?>"><ul>Delete</ul></a>
 
 <?php }?>
 </ul>
