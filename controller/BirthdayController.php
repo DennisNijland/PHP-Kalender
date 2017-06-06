@@ -26,7 +26,7 @@ function edit($id = ''){
 	$birthdays = getBirthday($id);
 
 	render("Birthday/edit", array(
-		'birthdays' => editBirthday()
+		'birthdays' => $birthdays
 	));
 }
 
