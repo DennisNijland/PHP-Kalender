@@ -9,8 +9,8 @@ foreach($birthdays as $birthday) {?>
 
 	<h1><ul><?=$month[$birthday['month'] -1]; ?></ul></h1>
 	<h2><ul><?=$birthday['day'];?></ul></h2>
-	<a href="<?= URL ?>Birthday/edit/<?= $birthday['id'];?>"><h4><ul><?=$birthday['person'];?></ul></h4></a>
-	<a href="<?= URL ?>Birthday/delete/<?= $birthday['id'];?>" onclick="return confirm('Weet je zeker dat je deze verjaardag wilt verwijderen?');">Delete</a>
+	<a href="<?= URL ?>Birthday/edit/<?= $birthday['id'];?>"><ul><?=$birthday['person'];?></ul></a>
+	<a href="<?= URL ?>Birthday/delete/<?= $birthday['id'];?>" onclick="return confirm('Weet je zeker dat je deze verjaardag wilt verwijderen?');">x</a>
 <?php }?>
 </ul>
 <a href="<?= URL ?>Birthday/create">Toevoegen</a>

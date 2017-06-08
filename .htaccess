@@ -1,4 +1,2 @@
 RewriteEngine on
 RewriteRule ^(.*) public/$1 [L]
-
-AddType text/css css
